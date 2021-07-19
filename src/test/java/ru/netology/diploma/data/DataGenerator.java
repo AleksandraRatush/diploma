@@ -15,6 +15,8 @@ public class DataGenerator {
     private static final String SPACE = " ";
     private static final Faker FAKER = new Faker();
     private static final String APPROVED_CARD = "4444 4444 4444 4441";
+    private static final String DECLINED_CARD = "4444 4444 4444 4442";
+    private static final String INVALID_CARD = "4444 4444 4444 444";
     public static final String ZERO = "0";
     public static final int MIN_CVC = 100;
     public static final int MAX_CVC = 999;
@@ -24,15 +26,15 @@ public class DataGenerator {
         return name.lastName() + SPACE + name.firstName();
     }
 
-    public static Calendar generateFutureDate(int atMost, TimeUnit timeUnit) {
+    public static Calendar generateFutureDate(int atMost, int minimum, TimeUnit timeUnit) {
         Calendar calendar = new GregorianCalendar();
-        calendar.setTime(FAKER.date().future(atMost, timeUnit));
+        calendar.setTime(FAKER.date().future(atMost, minimum, timeUnit));
         return calendar;
     }
 
-    public static Calendar generatePastDate(int atMost, TimeUnit timeUnit) {
+    public static Calendar generatePastDate(int atMost, int minimum, TimeUnit timeUnit) {
         Calendar calendar = new GregorianCalendar();
-        calendar.setTime(FAKER.date().past(atMost, timeUnit));
+        calendar.setTime(FAKER.date().past(atMost, minimum, timeUnit));
         return calendar;
     }
 
@@ -41,8 +43,29 @@ public class DataGenerator {
     }
 
     public static CardInfo generateValidCardInfo(){
-        Calendar date = generateFutureDate(300, TimeUnit.DAYS);
+        Calendar date = generateFutureDate(400, 300, TimeUnit.DAYS);
         return new CardInfo (APPROVED_CARD, getMonth(date),
+                getYear(date), generateCardHolderName(),
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateDeclinedCardInfo(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (DECLINED_CARD, getMonth(date),
+                getYear(date), generateCardHolderName(),
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateWithoutCardInfo(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (null, getMonth(date),
+                getYear(date), generateCardHolderName(),
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateWithInvalidCardCardInfo(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (INVALID_CARD, getMonth(date),
                 getYear(date), generateCardHolderName(),
                 generateCVC(MIN_CVC, MAX_CVC));
     }

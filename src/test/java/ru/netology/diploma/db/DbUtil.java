@@ -17,39 +17,40 @@ public class DbUtil {
 
     private static QueryRunner runner = new QueryRunner();
 
-    public static List<Order> getOrders() throws SQLException {
+    public static List<Order> getOrders(String url) throws SQLException {
         var dataSQL = "select id, created, credit_id as creditId, payment_id as paymentId from order_entity";
         try (
-                var conn = getConnection()
+                var conn = getConnection(url)
         ) {
             return runner.query(conn, dataSQL, orderResultHandler);
         }
     }
 
-    public static List<Payment> getPayments() throws SQLException {
+    public static List<Payment> getPayments(String url) throws SQLException {
         var dataSQL = "select id, amount, created, status, transaction_id as transactionId from payment_entity";
         try (
-                var conn = getConnection()
+                var conn = getConnection(url)
         ) {
             return runner.query(conn, dataSQL, paymentResultHandler);
         }
     }
 
-    public static List<CreditRequest> getCreditRequests() throws SQLException {
+    public static List<CreditRequest> getCreditRequests(String url) throws SQLException {
         var dataSQL = "select id, bank_id as bankId, created, status from credit_request_entity";
         try (
-                var conn = getConnection()
+                var conn = getConnection(url)
         ) {
             return runner.query(conn, dataSQL, creditRequestResultHandler);
         }
     }
 
-    public static void clearDb() throws SQLException {
+
+    public static void clearDb(String url) throws SQLException {
         var orderSQL = "DELETE from order_entity";
         var paymentSQL = "DELETE from payment_entity";
         var requestSQL = "DELETE from credit_request_entity";
         try (
-                var conn = getConnection();
+                var conn = getConnection(url)
         ) {
             runner.execute(conn, orderSQL);
             runner.execute(conn, paymentSQL);
@@ -57,8 +58,8 @@ public class DbUtil {
         }
     }
 
-    private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app",
+    private static Connection getConnection(String url) throws SQLException {
+        return DriverManager.getConnection(url, "app",
                 "pass");
     }
 

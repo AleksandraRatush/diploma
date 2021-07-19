@@ -21,8 +21,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TourTest {
 
-    public static final int TIME_DELTA_MILLS = 5000;
+    public static final int TIME_DELTA_MILLS = 10000;
     public static final String APPROVED_STATUS = "APPROVED";
+    public static final String DECLINED_STATUS = "DECLINED";
+    private static final String MY_SQL_URL =  "jdbc:mysql://localhost:3306/app";
+
 
     @BeforeEach
     public void login() {
@@ -33,9 +36,15 @@ public class TourTest {
     public void successDebt() throws SQLException {
         MainPage mainPage = new MainPage();
         CardPage cardPage = mainPage.byDebt();
-        cardPage.fillData(DataGenerator.generateValidCardInfo());
+        cardPage.fillDataAndCommmit(DataGenerator.generateValidCardInfo());
         cardPage.checkSuccess();
-        List<Order> orders = DbUtil.getOrders();
+        checkSuccessStateInDBDebt();
+
+
+    }
+
+    private void checkSuccessStateInDBDebt() throws SQLException {
+        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
         assertEquals(1, orders.size());
         Order order = orders.get(0);
         Date now = new Date();
@@ -43,9 +52,9 @@ public class TourTest {
         assertNull(order.getCreditId());
         assertNotNull(order.getPaymentId());
         assertNotNull(order.getId());
-        List<CreditRequest> creditRequests = DbUtil.getCreditRequests();
+        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
         assertTrue(creditRequests.isEmpty());
-        List<Payment> payments = DbUtil.getPayments();
+        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
         Payment payment = payments.get(0);
         assertEquals(1, payments.size());
         assertTrue(now.getTime() - payment.getCreated().getTime() < TIME_DELTA_MILLS);
@@ -54,24 +63,22 @@ public class TourTest {
         assertEquals(APPROVED_STATUS, payment.getStatus());
         assertEquals(45000, payment.getAmount());
         assertEquals(order.getPaymentId(), payment.getId());
-
-
     }
 
     @Test
     public void successCredit() throws SQLException {
         MainPage mainPage = new MainPage();
         CardPage cardPage = mainPage.byCredit();
-        cardPage.fillData(DataGenerator.generateValidCardInfo());
+        cardPage.fillDataAndCommmit(DataGenerator.generateValidCardInfo());
         cardPage.checkSuccess();
-        List<CreditRequest> creditRequests = DbUtil.getCreditRequests();
+        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
         assertEquals(1, creditRequests.size());
         CreditRequest creditRequest = creditRequests.get(0);
         assertEquals(APPROVED_STATUS, creditRequest.getStatus());
         assertNotNull(creditRequest.getBankId());
         Date now = new Date();
         assertTrue(now.getTime() - creditRequest.getCreated().getTime() < TIME_DELTA_MILLS);
-        List<Order> orders = DbUtil.getOrders();
+        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
         assertEquals(1, orders.size());
         Order order = orders.get(0);
         assertTrue(now.getTime() - order.getCreated().getTime() < TIME_DELTA_MILLS);
@@ -79,7 +86,7 @@ public class TourTest {
         assertNotNull(order.getId());
         assertNotNull(order.getCreditId());
         assertEquals(creditRequest.getId(), order.getCreditId());
-        List<Payment> payments = DbUtil.getPayments();
+        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
         Payment payment = payments.get(0);
         assertEquals(1, payments.size());
         assertTrue(now.getTime() - payment.getCreated().getTime() < TIME_DELTA_MILLS);
@@ -90,8 +97,60 @@ public class TourTest {
         assertEquals(order.getPaymentId(), payment.getId());
     }
 
+    @Test
+    public void invalidCardDebt() throws SQLException {
+        MainPage mainPage = new MainPage();
+        CardPage cardPage = mainPage.byDebt();
+        cardPage.fillDataAndCommmit(DataGenerator.generateWithoutCardInfo());
+        cardPage.checkCardInvalidFormatVisible();
+        DataGenerator.CardInfo cardInfo = DataGenerator.generateWithInvalidCardCardInfo();
+        cardPage.fillCardDataAndCommit(cardInfo);
+        cardPage.checkCardInvalidFormatVisible();
+        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
+        assertTrue(creditRequests.isEmpty());
+        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
+        assertTrue(orders.isEmpty());
+        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
+        assertTrue(payments.isEmpty());
+        for (char a = 0; a < Character.MAX_VALUE; a++) {
+            if (!Character.isDigit(a) && a != 8) {
+                cardPage.addCardDigits(Character.toString(a));
+            }
+            assertEquals(cardInfo.getCardNumber(), cardPage.getCardValue());
+        }
+        cardPage.addCardDigits("1");
+        String validCard = DataGenerator.generateValidCardInfo().getCardNumber();
+        assertEquals(validCard, cardPage.getCardValue());
+        cardPage.addCardDigits("2");
+        assertEquals(validCard, cardPage.getCardValue());
+        cardPage.commit();
+        cardPage.checkSuccess();
+        cardPage.checkCardInvalidFormatNotVisible();
+        checkSuccessStateInDBDebt();
+    }
+
+    @Test
+    public void declinedCredit() throws SQLException {
+        MainPage mainPage = new MainPage();
+        CardPage cardPage = mainPage.byCredit();
+        cardPage.fillDataAndCommmit(DataGenerator.generateDeclinedCardInfo());
+        cardPage.checkDecline();
+        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
+        assertEquals(1, creditRequests.size());
+        CreditRequest creditRequest = creditRequests.get(0);
+        assertEquals(DECLINED_STATUS, creditRequest.getStatus());
+        assertNotNull(creditRequest.getBankId());
+        Date now = new Date();
+        assertTrue(now.getTime() - creditRequest.getCreated().getTime() < TIME_DELTA_MILLS);
+        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
+        assertTrue(orders.isEmpty());
+        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
+        assertTrue(payments.isEmpty());
+
+     }
+
     @AfterEach
     public void clear() throws SQLException {
-        DbUtil.clearDb();
+        DbUtil.clearDb(MY_SQL_URL);
     }
 }
