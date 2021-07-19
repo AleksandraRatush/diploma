@@ -106,12 +106,7 @@ public class TourTest {
         DataGenerator.CardInfo cardInfo = DataGenerator.generateWithInvalidCardCardInfo();
         cardPage.fillCardDataAndCommit(cardInfo);
         cardPage.checkCardInvalidFormatVisible();
-        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
-        assertTrue(creditRequests.isEmpty());
-        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
-        assertTrue(orders.isEmpty());
-        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
-        assertTrue(payments.isEmpty());
+        checkDbIsEmpty();
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             if (!Character.isDigit(a) && a != 8) {
                 cardPage.addCardDigits(Character.toString(a));
@@ -127,6 +122,15 @@ public class TourTest {
         cardPage.checkSuccess();
         cardPage.checkCardInvalidFormatNotVisible();
         checkSuccessStateInDBDebt();
+    }
+
+    private void checkDbIsEmpty() throws SQLException {
+        List<CreditRequest> creditRequests = DbUtil.getCreditRequests(MY_SQL_URL);
+        assertTrue(creditRequests.isEmpty());
+        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
+        assertTrue(orders.isEmpty());
+        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
+        assertTrue(payments.isEmpty());
     }
 
     @Test
