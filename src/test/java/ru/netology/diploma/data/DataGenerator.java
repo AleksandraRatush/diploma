@@ -63,6 +63,34 @@ public class DataGenerator {
                 generateCVC(MIN_CVC, MAX_CVC));
     }
 
+    public static CardInfo generateWithoutMonth(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (APPROVED_CARD, null,
+                getYear(date), generateCardHolderName(),
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateWithoutYear(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (APPROVED_CARD, getMonth(date),
+                null, generateCardHolderName(),
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateWithoutHolder(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (APPROVED_CARD, getMonth(date),
+                getYear(date), null,
+                generateCVC(MIN_CVC, MAX_CVC));
+    }
+
+    public static CardInfo generateWithoutCvc(){
+        Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
+        return new CardInfo (APPROVED_CARD, getMonth(date),
+                getYear(date), generateCardHolderName(),
+                null);
+    }
+
     public static CardInfo generateWithInvalidCardCardInfo(){
         Calendar date = generateFutureDate(400, 300,  TimeUnit.DAYS);
         return new CardInfo (INVALID_CARD, getMonth(date),
