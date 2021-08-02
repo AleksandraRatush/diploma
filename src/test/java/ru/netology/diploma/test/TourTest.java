@@ -107,7 +107,6 @@ class TourTest {
     void invalidMonthCredit() throws SQLException {
         CardPage cardPage = byCredit();
         invalidMonth(cardPage);
-        checkSuccessStateInDBCredit(MY_SQL_URL);
     }
 
     private void invalidMonth(CardPage cardPage) throws SQLException {
