@@ -167,7 +167,9 @@ public class CardPage {
 
 
     public void checkCardInvalidFormatNotVisible() {
-        invalidCardFormat.shouldBe(Condition.visible).shouldNotBe(Condition.text(ILLEGAL_FORMAT_TEXT));
+        if (invalidCvcFormat.exists()){
+            invalidCardFormat.shouldNotBe(Condition.text(ILLEGAL_FORMAT_TEXT));
+        }
     }
 
     public void checkMonthInvalidFormatVisible() {

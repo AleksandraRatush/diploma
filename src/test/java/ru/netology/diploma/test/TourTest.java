@@ -54,14 +54,12 @@ class TourTest {
     void invalidCardDebt() throws SQLException {
         CardPage cardPage = byDebt();
         invalidCard(cardPage);
-        checkSuccessStateInDBDebt(MY_SQL_URL);
     }
 
     @Test
     void invalidCardCredit() throws SQLException {
         CardPage cardPage = byCredit();
         invalidCard(cardPage);
-        checkSuccessStateInDBCredit(MY_SQL_URL);
     }
 
     private CardPage byCredit() {
@@ -103,7 +101,6 @@ class TourTest {
     void invalidMonthDebt() throws SQLException {
         CardPage cardPage = byDebt();
         invalidMonth(cardPage);
-        checkSuccessStateInDBDebt(MY_SQL_URL);
     }
 
     @Test
@@ -146,14 +143,12 @@ class TourTest {
     void invalidYearDebt() throws SQLException {
         CardPage cardPage = byDebt();
         invalidYear(cardPage);
-        checkSuccessStateInDBDebt(MY_SQL_URL);
     }
 
     @Test
     void invalidYearCredit() throws SQLException {
         CardPage cardPage = byCredit();
         invalidYear(cardPage);
-        checkSuccessStateInDBCredit(MY_SQL_URL);
     }
 
 
@@ -193,26 +188,17 @@ class TourTest {
     void invalidHolderDebt() throws SQLException {
         CardPage cardPage = byDebt();
         invalidHolder(cardPage);
-        checkSuccessStateInDBDebt(MY_SQL_URL);
     }
 
     @Test
     void invalidHolderCredit() throws SQLException {
         CardPage cardPage = byCredit();
         invalidHolder(cardPage);
-        checkSuccessStateInDBCredit(MY_SQL_URL);
     }
 
     private void invalidHolder(CardPage cardPage) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutHolder());
         cardPage.checkHolderFieldRequiredVisible();
-        cardPage.checkCardExpiredNotVisible();
-        cardPage.checkCardInvalidFormatNotVisible();
-        cardPage.checkMonthInvalidFormatNotVisible();
-        cardPage.checkMonthInvalidTermNotVisible();
-        cardPage.checkYearInvalidFormatNotVisible();
-        cardPage.checkYearInvalidTermNotVisible();
-        cardPage.checkCvcInvalidFormatNotVisible();
         TestUtil.checkDbIsEmpty(MY_SQL_URL);
         cardPage.addHolderChars("A");
         for (char a = 0; a < Character.MAX_VALUE; a++) {
@@ -224,22 +210,27 @@ class TourTest {
             assertEquals("A", cardPage.getHolderValue());
         }
         cardPage.clearAndFillHolderAndCommit(DataGenerator.generateValidCardInfo().getCardHolderName());
-        cardPage.checkHolderFieldRequiredVisible();
+        cardPage.checkHolderFieldRequiredNotVisible();
         cardPage.checkSuccess();
+        cardPage.checkCardExpiredNotVisible();
+        cardPage.checkCardInvalidFormatNotVisible();
+        cardPage.checkMonthInvalidFormatNotVisible();
+        cardPage.checkMonthInvalidTermNotVisible();
+        cardPage.checkYearInvalidFormatNotVisible();
+        cardPage.checkYearInvalidTermNotVisible();
+        cardPage.checkCvcInvalidFormatNotVisible();
     }
 
     @Test
     void invalidCvcDebt() throws SQLException {
         CardPage cardPage = byDebt();
         invalidCvc(cardPage);
-        checkSuccessStateInDBDebt(MY_SQL_URL);
     }
 
     @Test
     void invalidCvcDCredit() throws SQLException {
         CardPage cardPage = byCredit();
         invalidCvc(cardPage);
-        checkSuccessStateInDBCredit(MY_SQL_URL);
     }
 
     private void invalidCvc(CardPage cardPage) throws SQLException {
@@ -281,7 +272,16 @@ class TourTest {
         assertTrue(orders.isEmpty());
         List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
         assertTrue(payments.isEmpty());
+    }
 
+    @Test
+    void declinedDebt() throws SQLException {
+        CardPage cardPage = byDebt();
+        cardPage.fillDataAndCommmit(DataGenerator.generateDeclinedCardInfo());
+        cardPage.checkDecline();
+        checkCreditRequestNotExists(MY_SQL_URL);
+        Order order = checkOrder(false,MY_SQL_URL);
+        checkPayment(order.getPaymentId(), "45000", Status.DECLINED, MY_SQL_URL);
     }
 
     @AfterEach

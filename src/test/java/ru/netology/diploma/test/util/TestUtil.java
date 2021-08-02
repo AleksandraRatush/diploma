@@ -71,8 +71,8 @@ public class TestUtil {
                                        String dbUrl) throws SQLException {
         Date now = new Date();
         List<Payment> payments = DbUtil.getPayments(dbUrl);
-        Payment payment = payments.get(0);
         assertEquals(1, payments.size());
+        Payment payment = payments.get(0);
         assertTrue(now.getTime() - payment.getCreated().getTime() < TIME_DELTA_MILLS);
         assertNotNull(payment.getId());
         assertNotNull(payment.getTransactionId());
