@@ -47,3 +47,4 @@ out/
 !**/src/test/**
 /artifacts/gate-simulator/node_modules/
 /artifacts/gate-simulator/nohup.out
+/.allure/

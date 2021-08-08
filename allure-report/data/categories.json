@@ -1,0 +1,277 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected: <45000> but was: <4500000>",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "e20f4d6e230e136d",
+        "parentUid" : "54749f0a82a563478f19f1c5d3a13223",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628416750535,
+          "stop" : 1628416764041,
+          "duration" : 13506
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "54749f0a82a563478f19f1c5d3a13223"
+    }, {
+      "name" : "expected: <1> but was: <0>",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "3fb245491e4ad2d4",
+        "parentUid" : "e5efa497b79d077e06c0dfd9b7bc1428",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628416769060,
+          "stop" : 1628416780138,
+          "duration" : 11078
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e5efa497b79d077e06c0dfd9b7bc1428"
+    }, {
+      "name" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416896036.0.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416896036.0.html\nTimeout: 60 s.",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "54b117c1a8df04b3",
+        "parentUid" : "7e2fa6cd84a2929175747eacf7aecfac",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628416833592,
+          "stop" : 1628416898393,
+          "duration" : 64801
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7e2fa6cd84a2929175747eacf7aecfac"
+    }, {
+      "name" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416965468.1.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416965468.1.html\nTimeout: 60 s.",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "f20c4a80d539c53f",
+        "parentUid" : "73d6d7ed6d2c5dd26b97a9ab03471af1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628416903421,
+          "stop" : 1628416965942,
+          "duration" : 62521
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "73d6d7ed6d2c5dd26b97a9ab03471af1"
+    }, {
+      "name" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417023858.2.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417023858.2.html\nTimeout: 4 s.",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "6ec2dbf28fe5f603",
+        "parentUid" : "0f02ed5bbec639820b5d15dd5a185b58",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417013800,
+          "stop" : 1628417026265,
+          "duration" : 12465
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0f02ed5bbec639820b5d15dd5a185b58"
+    }, {
+      "name" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417038552.3.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417038552.3.html\nTimeout: 4 s.",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "436ee42829b000b8",
+        "parentUid" : "f03a89a03532d50b2658877a84b263d3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417031279,
+          "stop" : 1628417039192,
+          "duration" : 7913
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f03a89a03532d50b2658877a84b263d3"
+    }, {
+      "name" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417050781.4.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417050781.4.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "768f88afe80a29a4",
+        "parentUid" : "74084f2f0f0f51a7689a8d32e04accd1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417044215,
+          "stop" : 1628417051478,
+          "duration" : 7263
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "74084f2f0f0f51a7689a8d32e04accd1"
+    }, {
+      "name" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417062681.5.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417062681.5.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "730c9b792d9dded0",
+        "parentUid" : "afc3fe36845532a7622d0f5cc4cf5621",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417056506,
+          "stop" : 1628417063243,
+          "duration" : 6737
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "afc3fe36845532a7622d0f5cc4cf5621"
+    }, {
+      "name" : "expected: not <null>",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "97eee81496069d6a",
+        "parentUid" : "5f18c668031a56c86d9361a8797e5508",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417068451,
+          "stop" : 1628417078641,
+          "duration" : 10190
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "6e60fc73593acfb3",
+        "parentUid" : "5f18c668031a56c86d9361a8797e5508",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417083653,
+          "stop" : 1628417092598,
+          "duration" : 8945
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5f18c668031a56c86d9361a8797e5508"
+    }, {
+      "name" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417107439.6.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417107439.6.html\nTimeout: 4 s.",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "32627b95da1f7526",
+        "parentUid" : "09363c0e104b147194a34eefed5a9919",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417097607,
+          "stop" : 1628417108772,
+          "duration" : 11165
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "09363c0e104b147194a34eefed5a9919"
+    }, {
+      "name" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417127983.7.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417127983.7.html\nTimeout: 4 s.",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "6b6a343ac63f5cb2",
+        "parentUid" : "fe95e5087201626f961afb0e5a3e49d8",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417113790,
+          "stop" : 1628417129044,
+          "duration" : 15254
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fe95e5087201626f961afb0e5a3e49d8"
+    }, {
+      "name" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417196501.8.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417196501.8.html\nTimeout: 60 s.",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "c319af6c871555a7",
+        "parentUid" : "82e48af4f76bc7d68974a703090c5cfd",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417134061,
+          "stop" : 1628417198547,
+          "duration" : 64486
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "82e48af4f76bc7d68974a703090c5cfd"
+    }, {
+      "name" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417266770.9.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417266770.9.html\nTimeout: 60 s.",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "375f35ca5df5fcca",
+        "parentUid" : "f3928db03d4f19aa244ad2d80b840c9d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417203566,
+          "stop" : 1628417268462,
+          "duration" : 64896
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f3928db03d4f19aa244ad2d80b840c9d"
+    }, {
+      "name" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417281473.10.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417281473.10.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "children" : [ {
+        "name" : "[1] jdbc:mysql://localhost:3306/app",
+        "uid" : "fcbdc4dd6c796008",
+        "parentUid" : "1a7711dec9cdad79d335bfdde28aa837",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417273505,
+          "stop" : 1628417282247,
+          "duration" : 8742
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1a7711dec9cdad79d335bfdde28aa837"
+    }, {
+      "name" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417294067.11.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417294067.11.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "children" : [ {
+        "name" : "[2] jdbc:postgresql://localhost:5432/app",
+        "uid" : "c6b75d16586e7cee",
+        "parentUid" : "fe7a9d3f8ebfa9f25157cb1cded2d555",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628417287259,
+          "stop" : 1628417299891,
+          "duration" : 12632
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fe7a9d3f8ebfa9f25157cb1cded2d555"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

@@ -1,0 +1,57 @@
+{
+  "uid" : "8aa37a7c0fa2a41f",
+  "name" : "[2] jdbc:postgresql://localhost:5432/app",
+  "fullName" : "ru.netology.diploma.test.TourTest.invalidCardDebt",
+  "historyId" : "7b3e24c6f6f807faa9bdcb36f322e806",
+  "time" : {
+    "start" : 1628416733299,
+    "stop" : 1628416745520,
+    "duration" : 12221
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "MacBook-Pro-Aleksandra.local"
+  }, {
+    "name" : "thread",
+    "value" : "49992@MacBook-Pro-Aleksandra.local.Test worker(12)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "invalidCardDebt"
+  }, {
+    "name" : "suite",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8aa37a7c0fa2a41f.json",
+  "parameterValues" : [ ]
+}

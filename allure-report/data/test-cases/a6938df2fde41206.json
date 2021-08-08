@@ -1,0 +1,57 @@
+{
+  "uid" : "a6938df2fde41206",
+  "name" : "[2] jdbc:postgresql://localhost:5432/app",
+  "fullName" : "ru.netology.diploma.test.TourTest.invalidYearDebt",
+  "historyId" : "9a8e4f3cb57b267f6495c32dd79cc018",
+  "time" : {
+    "start" : 1628417336796,
+    "stop" : 1628417359349,
+    "duration" : 22553
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "MacBook-Pro-Aleksandra.local"
+  }, {
+    "name" : "thread",
+    "value" : "49992@MacBook-Pro-Aleksandra.local.Test worker(12)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "invalidYearDebt"
+  }, {
+    "name" : "suite",
+    "value" : "ru.netology.diploma.test.TourTest"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a6938df2fde41206.json",
+  "parameterValues" : [ ]
+}

@@ -1,8 +1,9 @@
 package ru.netology.diploma.test;
 
+
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import ru.netology.diploma.data.DataGenerator;
 import ru.netology.diploma.data.Status;
 import ru.netology.diploma.db.DbUtil;
@@ -23,18 +24,19 @@ import static ru.netology.diploma.test.util.TestUtil.*;
 
 class TourTest {
 
+    private String currentUrl;
 
-    @BeforeEach
-    public void login() {
-        open("http://localhost:8080/");
-    }
 
-    @Test
-    void successDebt() throws SQLException {
+
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void successDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
         cardPage.fillDataAndCommmit(DataGenerator.generateValidCardInfo());
         cardPage.checkSuccess();
-        checkSuccessStateInDBDebt(MY_SQL_URL);
+        checkSuccessStateInDBDebt(url);
+        DbUtil.clearDb(url);
     }
 
     private CardPage byDebt() {
@@ -42,24 +44,30 @@ class TourTest {
         return mainPage.byDebt();
     }
 
-    @Test
-    void successCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void successCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
         cardPage.fillDataAndCommmit(DataGenerator.generateValidCardInfo());
         cardPage.checkSuccess();
-        checkSuccessStateInDBCredit(MY_SQL_URL);
+        checkSuccessStateInDBCredit(url);
     }
 
-    @Test
-    void invalidCardDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidCardDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
-        invalidCard(cardPage);
+        invalidCard(cardPage, url);
     }
 
-    @Test
-    void invalidCardCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidCardCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
-        invalidCard(cardPage);
+        invalidCard(cardPage, url);
     }
 
     private CardPage byCredit() {
@@ -67,7 +75,7 @@ class TourTest {
         return mainPage.byCredit();
     }
 
-    private void invalidCard(CardPage cardPage) throws SQLException {
+    private void invalidCard(CardPage cardPage, String url) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutCardInfo());
         cardPage.checkCardInvalidFormatVisible();
         cardPage.checkCardExpiredNotVisible();
@@ -80,7 +88,7 @@ class TourTest {
         DataGenerator.CardInfo cardInfo = DataGenerator.generateWithInvalidCardCardInfo();
         cardPage.fillCardDataAndCommit(cardInfo);
         cardPage.checkCardInvalidFormatVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             if (!Character.isDigit(a) && a != 8) {
                 cardPage.addCardDigits(Character.toString(a));
@@ -97,19 +105,23 @@ class TourTest {
         cardPage.checkCardInvalidFormatNotVisible();
     }
 
-    @Test
-    void invalidMonthDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidMonthDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
-        invalidMonth(cardPage);
+        invalidMonth(cardPage, url);
     }
 
-    @Test
-    void invalidMonthCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidMonthCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
-        invalidMonth(cardPage);
+        invalidMonth(cardPage, url);
     }
 
-    private void invalidMonth(CardPage cardPage) throws SQLException {
+    private void invalidMonth(CardPage cardPage, String url) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutMonth());
         cardPage.checkMonthInvalidFormatVisible();
         cardPage.checkCardExpiredNotVisible();
@@ -121,7 +133,7 @@ class TourTest {
         cardPage.checkCvcInvalidFormatNotVisible();
         cardPage.fillMonthAndCommit("1");
         cardPage.checkMonthInvalidFormatVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             if (!Character.isDigit(a) && a != 8) {
                 cardPage.addMonthDigits(Character.toString(a));
@@ -138,20 +150,24 @@ class TourTest {
         cardPage.checkSuccess();
     }
 
-    @Test
-    void invalidYearDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidYearDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
-        invalidYear(cardPage);
+        invalidYear(cardPage, url);
     }
 
-    @Test
-    void invalidYearCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidYearCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
-        invalidYear(cardPage);
+        invalidYear(cardPage, url);
     }
 
 
-    private void invalidYear(CardPage cardPage) throws SQLException {
+    private void invalidYear(CardPage cardPage, String url) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutYear());
         cardPage.checkYearInvalidFormatVisible();
         cardPage.fillYearAndCommit("1");
@@ -163,7 +179,7 @@ class TourTest {
         cardPage.checkMonthInvalidTermNotVisible();
         cardPage.checkHolderFieldRequiredNotVisible();
         cardPage.checkCvcInvalidFormatNotVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             if (!Character.isDigit(a) && a != 8) {
                 cardPage.addYearDigits(Character.toString(a));
@@ -173,32 +189,37 @@ class TourTest {
         cardPage.clearAndFillYearAndCommit("13");
         cardPage.checkYearInvalidFormatNotVisible();
         cardPage.checkCardExpiredVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         cardPage.clearAndFillYearAndCommit("33");
         cardPage.checkYearInvalidTermVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         String month = DataGenerator.generateValidCardInfo().getYear();
         cardPage.clearAndFillYearAndCommit(month);
         cardPage.checkYearInvalidTermNotVisible();
         cardPage.checkSuccess();
+
     }
 
-    @Test
-    void invalidHolderDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidHolderDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
-        invalidHolder(cardPage);
+        invalidHolder(cardPage, url);
     }
 
-    @Test
-    void invalidHolderCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidHolderCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
-        invalidHolder(cardPage);
+        invalidHolder(cardPage, url);
     }
 
-    private void invalidHolder(CardPage cardPage) throws SQLException {
+    private void invalidHolder(CardPage cardPage, String url) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutHolder());
         cardPage.checkHolderFieldRequiredVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         cardPage.addHolderChars("A");
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             boolean isLatinUpper = a > 'A' && a < 'Z';
@@ -220,19 +241,23 @@ class TourTest {
         cardPage.checkCvcInvalidFormatNotVisible();
     }
 
-    @Test
-    void invalidCvcDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidCvcDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
-        invalidCvc(cardPage);
+        invalidCvc(cardPage, url);
     }
 
-    @Test
-    void invalidCvcDCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void invalidCvcDCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
-        invalidCvc(cardPage);
+        invalidCvc(cardPage, url);
     }
 
-    private void invalidCvc(CardPage cardPage) throws SQLException {
+    private void invalidCvc(CardPage cardPage, String url) throws SQLException {
         cardPage.fillDataAndCommmit(DataGenerator.generateWithoutCvc());
         cardPage.checkCvcInvalidFormatVisible();
         cardPage.checkCardExpiredNotVisible();
@@ -242,10 +267,10 @@ class TourTest {
         cardPage.checkYearInvalidFormatNotVisible();
         cardPage.checkYearInvalidTermNotVisible();
         cardPage.checkHolderFieldRequiredNotVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         cardPage.fillCvcAndCommit("1");
         cardPage.checkCvcInvalidFormatVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         for (char a = 0; a < Character.MAX_VALUE; a++) {
             if (!Character.isDigit(a) && a != 8) {
                 cardPage.addCvcDigits(Character.toString(a));
@@ -254,37 +279,51 @@ class TourTest {
         }
         cardPage.fillCvcAndCommit("2");
         cardPage.checkCvcInvalidFormatVisible();
-        TestUtil.checkDbIsEmpty(MY_SQL_URL);
+        TestUtil.checkDbIsEmpty(url);
         cardPage.fillCvcAndCommit("3");
         cardPage.checkCvcInvalidFormatNotVisible();
         cardPage.checkSuccess();
     }
 
 
-    @Test
-    void declinedCredit() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void declinedCredit(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byCredit();
         cardPage.fillDataAndCommmit(DataGenerator.generateDeclinedCardInfo());
         cardPage.checkDecline();
-        checkCreditRequest(Status.DECLINED, MY_SQL_URL);
-        List<Order> orders = DbUtil.getOrders(MY_SQL_URL);
+        checkCreditRequest(Status.DECLINED, url);
+        List<Order> orders = DbUtil.getOrders(url);
         assertTrue(orders.isEmpty());
-        List<Payment> payments = DbUtil.getPayments(MY_SQL_URL);
+        List<Payment> payments = DbUtil.getPayments(url);
         assertTrue(payments.isEmpty());
     }
 
-    @Test
-    void declinedDebt() throws SQLException {
+    @ParameterizedTest
+    @ValueSource(strings = {MY_SQL_URL, POSTGRES_URL})
+    void declinedDebt(String url) throws SQLException {
+        openPage(url);
         CardPage cardPage = byDebt();
         cardPage.fillDataAndCommmit(DataGenerator.generateDeclinedCardInfo());
         cardPage.checkDecline();
-        checkCreditRequestNotExists(MY_SQL_URL);
-        Order order = checkOrder(false,MY_SQL_URL);
-        checkPayment(order.getPaymentId(), "45000", Status.DECLINED, MY_SQL_URL);
+        checkCreditRequestNotExists(url);
+        Order order = checkOrder(false, url);
+        checkPayment(order.getPaymentId(), "45000", Status.DECLINED, url);
+    }
+
+    private void openPage(String url) throws SQLException {
+        currentUrl = url;
+        DbUtil.clearDb(url);
+        if (MY_SQL_URL.equals(url)) {
+            open( "http://localhost:8080/");
+        } else {
+            open( "http://localhost:8081/");
+        }
     }
 
     @AfterEach
-    public void clear() throws SQLException {
-        DbUtil.clearDb(MY_SQL_URL);
+    void clearDb() throws SQLException {
+        DbUtil.clearDb(currentUrl);
     }
 }

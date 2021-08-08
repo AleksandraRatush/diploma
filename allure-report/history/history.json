@@ -1,0 +1,550 @@
+{
+  "ce8c75f55be7128d4397a30d3e065b57" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "44b08106b1dc097",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417388201,
+        "stop" : 1628417407062,
+        "duration" : 18861
+      }
+    } ]
+  },
+  "32ce62eca3fd85ef132aff08c2c4cd99" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "41c50d12c622c8ce",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416693898,
+        "stop" : 1628416710629,
+        "duration" : 16731
+      }
+    } ]
+  },
+  "6d545ffbc22e5ebbf95cfb01b6028dfb" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6e60fc73593acfb3",
+      "status" : "failed",
+      "statusDetails" : "expected: not <null>",
+      "time" : {
+        "start" : 1628417083653,
+        "stop" : 1628417092598,
+        "duration" : 8945
+      }
+    } ]
+  },
+  "edc88cabcb418283857f9e37b0975d5f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "644b06d5bfa80cf1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416715664,
+        "stop" : 1628416728285,
+        "duration" : 12621
+      }
+    } ]
+  },
+  "dc97c21ca401e222e160eb7d7610282b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f3bdf6b7ec07c9bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416805107,
+        "stop" : 1628416828580,
+        "duration" : 23473
+      }
+    } ]
+  },
+  "aea0a7427eb0ec89c5c50dda41b731bc" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "375f35ca5df5fcca",
+      "status" : "failed",
+      "statusDetails" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417266770.9.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417266770.9.html\nTimeout: 60 s.",
+      "time" : {
+        "start" : 1628417203566,
+        "stop" : 1628417268462,
+        "duration" : 64896
+      }
+    } ]
+  },
+  "1c57c58a63a1cb50f28e7ed8e42e183f" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "97eee81496069d6a",
+      "status" : "failed",
+      "statusDetails" : "expected: not <null>",
+      "time" : {
+        "start" : 1628417068451,
+        "stop" : 1628417078641,
+        "duration" : 10190
+      }
+    } ]
+  },
+  "886469c3e9720de2a2cca00057b5847c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dda70285b33984c5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416785154,
+        "stop" : 1628416800096,
+        "duration" : 14942
+      }
+    } ]
+  },
+  "1b2d01f3ebfee7efa17213123e2a30ec" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6ec2dbf28fe5f603",
+      "status" : "failed",
+      "statusDetails" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417023858.2.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417023858.2.html\nTimeout: 4 s.",
+      "time" : {
+        "start" : 1628417013800,
+        "stop" : 1628417026265,
+        "duration" : 12465
+      }
+    } ]
+  },
+  "ae289e70f721b049cb8263c8612ff553" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c6b75d16586e7cee",
+      "status" : "failed",
+      "statusDetails" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417294067.11.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417294067.11.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "time" : {
+        "start" : 1628417287259,
+        "stop" : 1628417299891,
+        "duration" : 12632
+      }
+    } ]
+  },
+  "113dc8a24172a1178928f95b7ae16377" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "768f88afe80a29a4",
+      "status" : "failed",
+      "statusDetails" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417050781.4.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417050781.4.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "time" : {
+        "start" : 1628417044215,
+        "stop" : 1628417051478,
+        "duration" : 7263
+      }
+    } ]
+  },
+  "9c5cef4d5d2472305eca187316362312" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3fb245491e4ad2d4",
+      "status" : "failed",
+      "statusDetails" : "expected: <1> but was: <0>",
+      "time" : {
+        "start" : 1628416769060,
+        "stop" : 1628416780138,
+        "duration" : 11078
+      }
+    } ]
+  },
+  "9a8e4f3cb57b267f6495c32dd79cc018" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a6938df2fde41206",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417336796,
+        "stop" : 1628417359349,
+        "duration" : 22553
+      }
+    } ]
+  },
+  "c7e6ec33945753393d89169bc3866294" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "32627b95da1f7526",
+      "status" : "failed",
+      "statusDetails" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417107439.6.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417107439.6.html\nTimeout: 4 s.",
+      "time" : {
+        "start" : 1628417097607,
+        "stop" : 1628417108772,
+        "duration" : 11165
+      }
+    } ]
+  },
+  "807062759181982c79b6e3545189393" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6b6a343ac63f5cb2",
+      "status" : "failed",
+      "statusDetails" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417127983.7.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417127983.7.html\nTimeout: 4 s.",
+      "time" : {
+        "start" : 1628417113790,
+        "stop" : 1628417129044,
+        "duration" : 15254
+      }
+    } ]
+  },
+  "a159235553a86dd94ee68ebfe7fd83d8" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "730c9b792d9dded0",
+      "status" : "failed",
+      "statusDetails" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417062681.5.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417062681.5.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "time" : {
+        "start" : 1628417056506,
+        "stop" : 1628417063243,
+        "duration" : 6737
+      }
+    } ]
+  },
+  "1160d475c12b00111b545abee17fe7e5" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "436ee42829b000b8",
+      "status" : "failed",
+      "statusDetails" : "Element should not be text 'Поле обязательно для заполнения' {.input__top.findBy(text 'Владелец')/By.xpath: ../.input__sub}\nElement: '<span class=\"input__sub\">Поле обязательно для заполнения</span>'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417038552.3.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417038552.3.html\nTimeout: 4 s.",
+      "time" : {
+        "start" : 1628417031279,
+        "stop" : 1628417039192,
+        "duration" : 7913
+      }
+    } ]
+  },
+  "51bcb089bdee92858989537c2273352" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c319af6c871555a7",
+      "status" : "failed",
+      "statusDetails" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417196501.8.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417196501.8.html\nTimeout: 60 s.",
+      "time" : {
+        "start" : 1628417134061,
+        "stop" : 1628417198547,
+        "duration" : 64486
+      }
+    } ]
+  },
+  "a4f06f3f8394db78a697e35dc7268ce3" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "54b117c1a8df04b3",
+      "status" : "failed",
+      "statusDetails" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416896036.0.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416896036.0.html\nTimeout: 60 s.",
+      "time" : {
+        "start" : 1628416833592,
+        "stop" : 1628416898393,
+        "duration" : 64801
+      }
+    } ]
+  },
+  "9652c136cf0670c62acb8cc75c5cf92f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "66b2fed9c970ebfd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416970961,
+        "stop" : 1628416984017,
+        "duration" : 13056
+      }
+    } ]
+  },
+  "7b3e24c6f6f807faa9bdcb36f322e806" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8aa37a7c0fa2a41f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416733299,
+        "stop" : 1628416745520,
+        "duration" : 12221
+      }
+    } ]
+  },
+  "826a714882ef98aa48880cacdb51ecd2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8ca9a1a1dc19a5e4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416656715,
+        "stop" : 1628416688672,
+        "duration" : 31957
+      }
+    } ]
+  },
+  "1bbe381f9389f3bd585a0bcf235c010f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "15045a3aabddbfdf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416989093,
+        "stop" : 1628417008785,
+        "duration" : 19692
+      }
+    } ]
+  },
+  "47e30b9dec3537809d6b1086a32f3aca" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e20f4d6e230e136d",
+      "status" : "failed",
+      "statusDetails" : "expected: <45000> but was: <4500000>",
+      "time" : {
+        "start" : 1628416750535,
+        "stop" : 1628416764041,
+        "duration" : 13506
+      }
+    } ]
+  },
+  "aa65aca0ba386baed5ba66ad08fb3117" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fcbdc4dd6c796008",
+      "status" : "failed",
+      "statusDetails" : "Element not found {.input__top.findBy(text 'Номер карты')/By.xpath: ../.input__sub}\nExpected: not text 'Неверный формат'\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417281473.10.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628417281473.10.html\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".input__sub\"}",
+      "time" : {
+        "start" : 1628417273505,
+        "stop" : 1628417282247,
+        "duration" : 8742
+      }
+    } ]
+  },
+  "f4c1bb6327dd8fcb46c017b91ffb25b1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "516b994050e4c39e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417364371,
+        "stop" : 1628417383190,
+        "duration" : 18819
+      }
+    } ]
+  },
+  "2613079dc193c586cb765128ebe0e2a6" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f20c4a80d539c53f",
+      "status" : "failed",
+      "statusDetails" : "Element should be visible {.notification_status_error .notification__title}\nElement: '<div class=\"notification__title\" displayed:false></div>'\nActual value: visible:false\nScreenshot: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416965468.1.png\nPage source: file:/Users/rmorenko/sasha/diploma/build/reports/tests/1628416965468.1.html\nTimeout: 60 s.",
+      "time" : {
+        "start" : 1628416903421,
+        "stop" : 1628416965942,
+        "duration" : 62521
+      }
+    } ]
+  },
+  "f7312ef0a7479fa28de9a0fd38271fcd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "94f814887fef3e27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417305132,
+        "stop" : 1628417331785,
+        "duration" : 26653
+      }
+    } ]
+  }
+}

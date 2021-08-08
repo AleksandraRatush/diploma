@@ -1,0 +1,373 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "ru.netology.diploma.test.TourTest",
+    "children" : [ {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "8ca9a1a1dc19a5e4",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416656715,
+        "stop" : 1628416688672,
+        "duration" : 31957
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "41c50d12c622c8ce",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416693898,
+        "stop" : 1628416710629,
+        "duration" : 16731
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "644b06d5bfa80cf1",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416715664,
+        "stop" : 1628416728285,
+        "duration" : 12621
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "8aa37a7c0fa2a41f",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416733299,
+        "stop" : 1628416745520,
+        "duration" : 12221
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "e20f4d6e230e136d",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628416750535,
+        "stop" : 1628416764041,
+        "duration" : 13506
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "3fb245491e4ad2d4",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628416769060,
+        "stop" : 1628416780138,
+        "duration" : 11078
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "dda70285b33984c5",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416785154,
+        "stop" : 1628416800096,
+        "duration" : 14942
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "f3bdf6b7ec07c9bd",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416805107,
+        "stop" : 1628416828580,
+        "duration" : 23473
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "54b117c1a8df04b3",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628416833592,
+        "stop" : 1628416898393,
+        "duration" : 64801
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "f20c4a80d539c53f",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628416903421,
+        "stop" : 1628416965942,
+        "duration" : 62521
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "66b2fed9c970ebfd",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416970961,
+        "stop" : 1628416984017,
+        "duration" : 13056
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "15045a3aabddbfdf",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628416989093,
+        "stop" : 1628417008785,
+        "duration" : 19692
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "6ec2dbf28fe5f603",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417013800,
+        "stop" : 1628417026265,
+        "duration" : 12465
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "436ee42829b000b8",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417031279,
+        "stop" : 1628417039192,
+        "duration" : 7913
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "768f88afe80a29a4",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417044215,
+        "stop" : 1628417051478,
+        "duration" : 7263
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "730c9b792d9dded0",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417056506,
+        "stop" : 1628417063243,
+        "duration" : 6737
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "97eee81496069d6a",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417068451,
+        "stop" : 1628417078641,
+        "duration" : 10190
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "6e60fc73593acfb3",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417083653,
+        "stop" : 1628417092598,
+        "duration" : 8945
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "32627b95da1f7526",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417097607,
+        "stop" : 1628417108772,
+        "duration" : 11165
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "6b6a343ac63f5cb2",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417113790,
+        "stop" : 1628417129044,
+        "duration" : 15254
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "c319af6c871555a7",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417134061,
+        "stop" : 1628417198547,
+        "duration" : 64486
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "375f35ca5df5fcca",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417203566,
+        "stop" : 1628417268462,
+        "duration" : 64896
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "fcbdc4dd6c796008",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417273505,
+        "stop" : 1628417282247,
+        "duration" : 8742
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "c6b75d16586e7cee",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "failed",
+      "time" : {
+        "start" : 1628417287259,
+        "stop" : 1628417299891,
+        "duration" : 12632
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "94f814887fef3e27",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417305132,
+        "stop" : 1628417331785,
+        "duration" : 26653
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "a6938df2fde41206",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417336796,
+        "stop" : 1628417359349,
+        "duration" : 22553
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[1] jdbc:mysql://localhost:3306/app",
+      "uid" : "516b994050e4c39e",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417364371,
+        "stop" : 1628417383190,
+        "duration" : 18819
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[2] jdbc:postgresql://localhost:5432/app",
+      "uid" : "44b08106b1dc097",
+      "parentUid" : "3607acee843598d6b75d5cbf114aca27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1628417388201,
+        "stop" : 1628417407062,
+        "duration" : 18861
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "3607acee843598d6b75d5cbf114aca27"
+  } ]
+}

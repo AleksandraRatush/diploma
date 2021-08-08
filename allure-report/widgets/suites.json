@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "3607acee843598d6b75d5cbf114aca27",
+    "name" : "ru.netology.diploma.test.TourTest",
+    "statistic" : {
+      "failed" : 16,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 12,
+      "unknown" : 0,
+      "total" : 28
+    }
+  } ]
+}
