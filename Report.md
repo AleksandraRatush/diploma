@@ -33,3 +33,7 @@
 | #7| Некорректная логика отображения ошибки для поля CVC/CVV|https://github.com/AleksandraRatush/diploma/issues/7| 
 | #8| Некорректная логика при отказе банка при покупке тура в кредит |https://github.com/AleksandraRatush/diploma/issues/8| 
 | #9| Некорректная логика при отказе банка при покупке тура за счет собственных средств |https://github.com/AleksandraRatush/diploma/issues/9| 
+
+# Результаты прогона автотеста ()
+![](https://github.com/AleksandraRatush/diploma/blob/27441b04a731bba20d29cdc09c2fe7ee7aa61e9a/overview.png)
+![](https://github.com/AleksandraRatush/diploma/blob/27441b04a731bba20d29cdc09c2fe7ee7aa61e9a/suites.png)
